@@ -1,13 +1,82 @@
-body {
+/* Basic Reset */
+body, html {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  height: 100%;
+  background: #121212; /* Dark grey background */
+  color: #e0e0e0; /* Light grey text color for readability */
+  font-family: Arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Container styles with dark theme */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Ensure legible text and interactive elements */
+a, button {
+  color: #bb86fc; /* Light purple for links and buttons to stand out */
+  text-decoration: none; /* Removes underline from links */
+}
+
+button {
+  background-color: #333333; /* Darker background for buttons */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #bb86fc; /* Change color when hovered */
+  color: #333333; /* Change text color when hovered */
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #333333; /* Darker border for input fields */
+  background-color: #333333; /* Darker background for input fields */
+  color: #e0e0e0; /* Light grey text color for readability */
+  border-radius: 5px;
+  
+}
+
+input:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #bb86fc; /* Change border color when focused */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) { /* Mobile devices */
+  .container {
+      flex-direction: column;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 960px) { /* Tablet devices */
+  .container {
+      flex-direction: column;
+  }
+}
+
+@media (min-width: 961px) and (max-width: 1440px) { /* Laptop devices */
+  .container {
+      flex-direction: row;
+      max-width: 80%;
+      margin: auto;
+  }
+}
+
+@media (min-width: 1441px) { /* Desktop devices */
+  .container {
+      flex-direction: row;
+      max-width: 1200px;
+      margin: auto;
+  }
 }
